@@ -1,0 +1,41 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>Kevin's Game Store</title>
+</head>
+<body>
+
+  <header>
+    <h1>Welcome to Kevin's Game Store</h1>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="{% url 'index' %}">Home</a></li>
+      <li><a href="{% url 'game_list' %}">All Games</a></li>
+      <li><a href="{% url 'register' %}">Register</a></li>
+      <li><a href="{% url 'login' %}">Login</a></li>
+      <li><a href="{% url 'create_game' %}">Create Game</a></li>
+      <li><a href="{% url 'view_cart' %}">View Cart ({% if request.session.cart %}{{ request.session.cart|length }}{% else %}0{% endif %})</a></li>
+      
+    </ul>
+  </nav>
+
+  <section class="main-content">
+    <h2>Featured Games</h2>
+    <p> Call Of Duty Now ONLY $60</p>
+    <!-- Add your featured games content here -->
+  </section>
+
+  <footer>
+    <p>&copy; Kevin's Game Store</p>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>All {{ platform }} Games</h2>
+  <ul>
+    {% for game in games %}
+      <li><a href="{% url 'game_detail' game.id %}">{{ game.name }} {% if game.stock == 0 %}(Out of Stock){% endif %}</a></li>
+    {% endfor %}
+  </ul>
+{% endblock %}
